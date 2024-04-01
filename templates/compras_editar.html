@@ -3,7 +3,7 @@
 {% endblock %}
 {% block conteudo %}
 	<p>{{ teste }}</p>
-	<form action="compras_editar.php" method="POST" id="form_edicao">
+	<form action="compras_salvar.php" method="POST" id="form_edicao">
 		<input type="hidden" name="id" value="{{ compra.id }}">
 		<input type="text" name="item" value="{{ compra.item }}">
 		<div class="btn-acoes">

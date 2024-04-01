@@ -3,13 +3,13 @@
 require('twig_carregar.php');
 
 $frutas = [
-    'Abacaxi',
-    'Laranja',
-    'Banana',
-    'Maçã',
-    'Uva',
-    'Bergamota',
-    'Melancia',
+    'Abacaxi 🍍',
+    'Laranja 🍊',
+    'Banana 🍌',
+    'Maçã 🍎',
+    'Uva 🍇',
+    'Bergamota 🍊',
+    'Melancia 🍉',
 ];
 
 // Ou o valor de $_GET['fruta] ou null (caso não exista a variável ou o valor)

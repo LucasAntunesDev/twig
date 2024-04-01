@@ -151,3 +151,14 @@ input[type=text]{
 input[type=text]:focus{
     outline: none;
 }
+
+h1 svg{
+    width: 2.5rem;
+}
+
+h1{
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+    width: fit-content;
+}

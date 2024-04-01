@@ -45,7 +45,7 @@ button {
 }
 
 button:hover {
-    background: var(--verde-400);
+    background: var(--verde-700);
     cursor: pointer;
 }
 
@@ -116,4 +116,38 @@ ul.lista{
     flex-direction: column;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     padding-left: 1rem;
+}
+
+#form_edicao{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-left: 4rem;
+}
+
+#form_edicao>input{
+    width: 14rem;
+}
+
+#form_edicao>.btn-acoes{
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.btn-acoes>a:hover{
+    text-decoration: none;
+}
+
+input[type=text]{
+    border-radius: 0.5rem;
+    padding-inline: 0.5rem;
+    padding-block: 0.3rem;
+    border: solid 1px gray;
+    background: none;
+    color: var(--branco);
+}
+
+input[type=text]:focus{
+    outline: none;
 }

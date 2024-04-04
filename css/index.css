@@ -87,7 +87,8 @@ button:hover {
 
 li {
     margin-block: 1.5rem;
-    list-style-type: upper-roman;
+    /* list-style-type: upper-roman; */
+    list-style-type: none;
 }
 
 ul.lista{

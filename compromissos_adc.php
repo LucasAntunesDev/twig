@@ -14,6 +14,6 @@ $query->execute([
     $data
 ]);
 
-$query->execute();
+// $query->execute();
 
 header('location:compromissos.php');

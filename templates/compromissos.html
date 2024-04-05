@@ -10,7 +10,7 @@
 
 			<div>
 				<label for="data">data</label>
-				<input type="text" name="data" id="data">
+				<input type="date" name="data" id="data">
 			</div>
 			<button type="submit">Adicionar</button>
 		</form>
@@ -18,14 +18,20 @@
 
 	<p id="titulo-lista-compromissos">Esta é sua lista de compromissos:</p>
 
-	<ul class="lista">
+	<table class="lista">
 		{% for compromisso in compromissos %}
-			<li>
-				<span>{{ compromisso.descricao }}</span>
-				<span>{{ compromisso.data }}</span>
-				<a href="compromissos_editar.php?id={{ compromisso.id }}" class="edit-btn">Editar</a>
-				<a href="compromissos_remover.php?id={{ compromisso.id }}" class="delete-btn">Excluir</a>
-			</li>
+			<tr>
+				<td>
+					<span>Compromisso:
+						{{ compromisso.descricao }}</span>
+					<span>Data:
+						{{ compromisso.data }}</span>
+					<span>É no fim de semana?:
+						{{ compromisso.fim_de_semana }}</span>
+					<a href="compromissos_editar.php?id={{ compromisso.id }}" class="edit-btn">Editar</a>
+					<a href="compromissos_remover.php?id={{ compromisso.id }}" class="delete-btn">Excluir</a>
+				</td>
+			</tr>
 		{% endfor %}
-	</ul>
+	</table>
 {% endblock %}

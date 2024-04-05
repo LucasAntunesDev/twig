@@ -167,3 +167,7 @@ h1{
 label{
     text-transform: capitalize;
 }
+
+table{
+    row-gap: 4rem;
+}

@@ -22,12 +22,18 @@
 		{% for compromisso in compromissos %}
 			<tr>
 				<td>
-					<span>Compromisso:
-						{{ compromisso.descricao }}</span>
-					<span>Data:
-						{{ compromisso.data }}</span>
-					<span>É no fim de semana?:
-						{{ compromisso.fim_de_semana }}</span>
+					<span class="bold">
+						Compromisso:
+					</span>
+					{{ compromisso.descricao }}
+					<span class="bold">
+						Data:
+					</span>
+					{{ compromisso.data }}
+					<span class="bold">
+						É no fim de semana?:
+					</span>
+					{{ compromisso.fim_de_semana }}
 					<a href="compromissos_editar.php?id={{ compromisso.id }}" class="edit-btn">Editar</a>
 					<a href="compromissos_remover.php?id={{ compromisso.id }}" class="delete-btn">Excluir</a>
 				</td>

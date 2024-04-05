@@ -9,11 +9,20 @@ $dados = $pdo->query('SELECT * FROM compromissos');
 
 $compromissos = $dados->fetchAll(PDO::FETCH_ASSOC);
 
-$dia_na_semana = [];
-
-
 for ($i = 0; $i < sizeof($compromissos); $i++) {
-    $compromissos[$i]['fim_de_semana'] = Carbon::createFromDate($compromissos[$i]['data'])->isWeekend() ? 'Sim' : 'Não';
+    $data = $compromissos[$i]['data'];
+    
+    $data = Carbon::parse($data);  
+    // echo '<br>';
+    // echo '<pre>';
+    // echo $data;
+
+    // echo $data;
+
+    $compromissos[$i]['fim_de_semana'] = $data->isWeekend() ? 'Sim' : 'Não';
+    $compromissos[$i]['data'] = $data->locale('pt_BR')->isoFormat('LLLL');
 }
+
+// die;
 
 echo $twig->render('compromissos.html', ['compromissos' => $compromissos, 'titulo' => 'Compromissos']);

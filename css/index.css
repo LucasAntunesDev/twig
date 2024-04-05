@@ -170,7 +170,7 @@ label{
 }
 
 table{
-    display: flex;
+    /* display: flex; */
 }
 
 tr:nth-child(odd){
@@ -178,7 +178,7 @@ tr:nth-child(odd){
 }
 
 td{
-    display: flex;
+    display: inline-flex;
     align-items: center;
     padding: 1rem;
     column-gap: 1rem;
@@ -186,4 +186,9 @@ td{
 
 .bold{
     font-weight: bold;
+}
+
+table.tabela{
+    margin-inline: auto;
+    width: fit-content;
 }

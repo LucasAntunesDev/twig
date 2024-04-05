@@ -18,24 +18,24 @@
 
 	<p id="titulo-lista-compromissos">Esta é sua lista de compromissos:</p>
 
-	<table class="lista">
+	<table class="tabela">
+        <thead>
+        <tr>
+            <th>Compromisso</td>
+            <th>Data</td>
+            <th>É no fim de semana?</td>
+        </tr>
+        </thead>
 		{% for compromisso in compromissos %}
 			<tr>
 				<td>
-					<span class="bold">
-						Compromisso:
-					</span>
-					{{ compromisso.descricao }}
-					<span class="bold">
-						Data:
-					</span>
-					{{ compromisso.data }}
-					<span class="bold">
-						É no fim de semana?:
-					</span>
-					{{ compromisso.fim_de_semana }}
-					<a href="compromissos_editar.php?id={{ compromisso.id }}" class="edit-btn">Editar</a>
-					<a href="compromissos_remover.php?id={{ compromisso.id }}" class="delete-btn">Excluir</a>
+					{{ compromisso.descricao }}</td>
+					<td>{{ compromisso.data }}</td>
+					<td>{{ compromisso.fim_de_semana }}</td>
+					<td>
+                    <a href="compromissos_editar.php?id={{ compromisso.id }}" class="edit-btn">Editar</a>
+                    <a href="compromissos_remover.php?id={{ compromisso.id }}" class="delete-btn">Excluir</a>
+                    </td>
 				</td>
 			</tr>
 		{% endfor %}

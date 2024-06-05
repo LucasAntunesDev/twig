@@ -13,10 +13,10 @@ $usuarios = $dados->fetch(PDO::FETCH_ASSOC);
 $senha = $_POST['senha'];
 $senha_criptografada = $usuarios['senha'];
 
-if(password_verify($senha, $senha_criptografada)){
-    // echo 'mesma senha';
-    
-}else{
+if (password_verify($senha, $senha_criptografada)) {
+    echo 'mesma senha';
+
+} else {
     echo 'não é a mesma senha';
 }
 die;
@@ -79,13 +79,12 @@ if (
 
     echo (password_verify($senha, $senha_criptografada)) ?
         '<br> Senha Correta =D'
-    :
+        :
         '<br> Senha incorreta :(';
-    
 } else {
     session_start();
     $_SESSION['usuario'] = $usuario;
-    
+
     echo $twig->render('login.html', [
         'titulo' => 'Login',
     ]);

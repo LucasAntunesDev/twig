@@ -1,22 +1,25 @@
 {% extends "base.html" %}
 {% block conteudo %}
-	<div class="flex-row justify-center">
-		<h3>Adicionar item</h3>
-		<form action="compras_adc.php" method="POST">
-			<input type="text" name="item">
-			<button type="submit">Adicionar</button>
-		</form>
-	</div>
 
-	<p id="titulo-lista-compras">Esta é sua lista de compras:</p>
+<section class="flex-row justify-center add-section">
+	<p>Adicionar item</p>
+	<form action="compras_adc.php" method="POST">
+		<input type="text" name="item">
+		<button type="submit">Adicionar</button>
+	</form>
+</section>
 
-	<ul class="lista">
-		{% for compra in compras %}
-			<li>
-				{{ compra.item }}
-				<a href="compras_editar.php?id={{ compra.id }}" class="edit-btn">Editar</a>
-				<a href="compras_remover.php?id={{ compra.id }}" class="delete-btn">Excluir</a>
-			</li>
-		{% endfor %}
-	</ul>
+<p id="titulo-lista-compras">Esta é sua lista de compras:</p>
+
+<ul class="lista">
+	{% for compra in compras %}
+	<li>
+		<h2>{{ compra.item }}</h2>
+		<div>
+			<a href="compras_editar.php?id={{ compra.id }}" class="edit-btn">Editar</a>
+			<a href="compras_remover.php?id={{ compra.id }}" class="delete-btn">Excluir</a>
+		</div>
+	</li>
+	{% endfor %}
+</ul>
 {% endblock %}

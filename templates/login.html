@@ -1,25 +1,26 @@
 {% extends "base.html" %}
 {% block conteudo %}
 
-	<div class="container justify-center">
-		<section>
+<section class="container justify-center">
+    <miain>
+
+        <fieldset class="login fieldset">
             <h1>Login</h1>
+            <form action="login.php" class="login form" method="POST">
+                <input type="hidden" name="id" id="id">
+                <label for="nome">Login</label>
+                <input type="text" name="nome" id="nome" required>
 
-            <fieldset class="login fieldset">
-                <form action="login.php" class="login form" method="POST">
-                    <input type="hidden" name="id" id="id">
-                    <label for="nome">Usuário</label>
-                    <input type="text" name="nome" id="nome" required>
-                    <label for="senha">Senha</label>
-                    <input type="text" name="senha" id="senha" required>
+                <label for="senha">Senha</label>
+                <input type="text" name="senha" id="senha" required>
 
-                    <button type="submit">Entrar</button>
-                </form>
-		        
-                <a href="criar_usuario.php">Criar usuário</a>
-            </fieldset>
-        </section>
+                <button type="submit">Entrar</button>
+            </form>
 
-	</div>
+            <a href="criar_usuario.php">Criar usuário</a>
+        </fieldset>
+    </miain>
+
+</section>
 
 {% endblock %}

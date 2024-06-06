@@ -8,16 +8,25 @@ $dados = $pdo->prepare('SELECT * FROM usuarios WHERE nome = :nome');
 $dados->execute([
     ':nome' => $_POST['nome']
 ]);
-$usuarios = $dados->fetch(PDO::FETCH_ASSOC);
 
-$senha = $_POST['senha'];
-$senha_criptografada = $usuarios['senha'];
+$usuario_banco_de_dados = $dados->fetch(PDO::FETCH_ASSOC);
+$usuario_formulario = $_POST['nome'];
 
-if (password_verify($senha, $senha_criptografada)) {
-    echo 'mesma senha';
+$senha_criptografada = $usuario_banco_de_dados['senha'];
+$senha_formulario = $_POST['senha'];
 
+$nome_usuario = $usuario_banco_de_dados['nome'];
+
+
+if (password_verify($senha_formulario, $senha_criptografada) && $usuario_formulario === $nome_usuario) {
+    $_SESSION['usuario'] = $nome_usuario;
+    echo $twig->render('index.html', [
+        'titulo' => 'Início',
+    ]);
 } else {
-    echo 'não é a mesma senha';
+    echo $twig->render('login.html', [
+        'titulo' => 'Login', 'warning' => 1
+    ]);
 }
 die;
 

@@ -313,3 +313,12 @@ table.tabela {
 .add-section{
     margin: 2rem auto;
 }
+
+.warning{
+    color: var(--vermelho-500);
+    font-size: inherit;
+}
+
+.hidden{
+    display: none;
+}

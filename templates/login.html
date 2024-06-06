@@ -3,10 +3,16 @@
 
 <section class="container justify-center">
     <miain>
-
+1
         <fieldset class="login fieldset">
             <h1>Login</h1>
             <form action="login.php" class="login form" method="POST">
+
+                {% if warning === 1 %}
+                    <h2 class="warning">Algum campo está vazio ou incorreto</h2> 
+                {% endif %}
+
+
                 <input type="hidden" name="id" id="id">
                 <label for="nome">Login</label>
                 <input type="text" name="nome" id="nome" required>
